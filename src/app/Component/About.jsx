@@ -1,97 +1,77 @@
 'use client';
 
+import Image from "next/image";
+import { Phone, ArrowRight } from "lucide-react";
+
 export default function About() {
   return (
-    <section className="relative py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        {/* LEFT SECTION */}
-        <div>
-          <p className="text-yellow-500 font-semibold mb-2 uppercase">Who we are</p>
-          <h2 className="text-3xl md:text-4xl xl:text-4xl font-extrabold text-gray-800 mb-4">
-          Comprehensive Locksmith Services for Home, Office, and Vehicle
-          </h2>
-          <p className="text-gray-500 mb-8 text-base md:text-lg leading-relaxed">
-           At K.K All Keys Maker, we specialize in key making, lock repair, ignition services, and advanced security solutions. With years of experience, our certified technicians provide fast, reliable, and professional locksmith services for homes, offices, and vehicles, ensuring safety, convenience, and peace of mind for all customers.
+    <section className="relative py-16 md:py-20 lg:py-24 bg-white overflow-hidden" id="about">
+
+      {/* BACKGROUND IMAGE */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: "url('/img/aboutttbg.webp')" }}
+      ></div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+        {/* LEFT CONTENT */}
+        <div className="space-y-4 md:space-y-6 text-justify lg:text-left">
+
+          {/* SMALL TITLE */}
+          <p className="text-gray-900 font-semibold tracking-widest flex items-center gap-2 justify-start text-justify lg:justify-start">
+            <span className="w-2 h-2 bg-yellow-500 rounded-sm"></span>
+            <span className="w-4 h-2 bg-yellow-500 rounded-sm"></span>
+            About Us
           </p>
 
-          {/* Vision & Mission */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Vision */}
-            <div className="flex flex-wrap items-start gap-4">
-              <div className="bg-[#ffa41b] p-3 rounded-lg flex flex-wrap items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg text-gray-800 mb-1">Our Vision</h4>
-                <p className="text-gray-500 text-sm leading-snug">
-                  To be the most trusted locksmith service provider, known for quality, innovation, and exceptional customer care across the region.
-                </p>
-              </div>
-            </div>
+          {/* MAIN TITLE */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-snug text-justify lg:text-left">
+        Any Taxi, Any Time, Any Way 
+            <br className="hidden md:block" /> All India Taxi Services 
+          </h2>
 
-            {/* Mission */}
-            <div className="flex flex-wrap items-start gap-4">
-              <div className="bg-[#ffa41b] p-3 rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="font-semibold text-lg text-gray-800 mb-1">Our Mission</h4>
-                <p className="text-gray-500 text-sm leading-snug">
-                  To provide fast, reliable, and professional locksmith services, ensuring safety, security, and peace of mind for every home, office, and vehicle.
-                </p>
-              </div>
-            </div>
-          </div>
+          {/* DESCRIPTION */}
+          <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 text-justify">
+           Setia Tour and Travels has been serving travelers with reliable and affordable taxi services across India. Our mission is to make your journey safe, comfortable, and enjoyable. From Chandigarh to Manali or Delhi, and anywhere across India, we ensure hassle-free travel.
+          </p>
+
+         {/* CALL + BUTTON */}
+<div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-start gap-6 pt-4 w-full">
+
+  {/* Phone Box */}
+  <div className="flex items-center gap-3 text-justify w-full lg:w-auto">
+    <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center">
+      <Phone size={22} className="text-white" />
+    </div>
+
+    <div className="w-full text-justify lg:text-left">
+      <p className="text-gray-500 text-sm">Emergency Call Us</p>
+      <p className="text-xl font-bold text-gray-900">+91-8847670935</p>
+    </div>
+  </div>
+
+  {/* Button */}
+  <button className="bg-yellow-400 text-gray-900 font-semibold px-6 py-4 flex justify-center items-center gap-2 shadow-md hover:bg-yellow-500 transition rounded-md w-max text-justify md:px-8 md:py-4">
+    ABOUT MORE
+    <ArrowRight size={18} />
+  </button>
+
+</div>
+
         </div>
 
-        {/* RIGHT SECTION */}
-        <div className="relative grid grid-cols-2 gap-4 sm:gap-6">
-          {/* Left Image (shorter) */}
-          <div className="relative flex flex-col justify-end">
-            {/* Badge */}
-            <div className="absolute -top-2  xl:-top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#ffa41b] to-yellow-300 text-center w-full  sm:w-4/5 xl:py-4 py-3 rounded-xl shadow-md">
-              <h3 className="text-4xl sm:text-5xl font-bold text-gray-800 leading-none">15+</h3>
-              <p className="text-gray-700 font-medium text-xs sm:text-sm mt-1">YEARS OF EXPERIENCE</p>
-            </div>
-
-            <div className="rounded-xl overflow-hidden mt-12 lg:h-[350px] md:h-[320px] h-[280px]">
-              <img
-                src="/gallery/img7.webp"
-                alt="Locksmith working"
-                width={500}
-                height={500}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Right Image (taller) */}
-          <div className="rounded-xl overflow-hidden h-[360px] sm:h-[420px] md:h-[480px] self-end">
+        {/* RIGHT IMAGE */}
+        <div className="relative w-full flex justify-center">
+          <div className="relative rounded-2xl overflow-hidden w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
             <img
-              src="/gallery/img2.webp"
-              alt="Lock installation"
-              width={500}
-              height={700}
-              className="w-full h-full object-cover"
+              src="/img/01.webp"
+              alt="Car rental service"
+              className="object-cover w-full h-full"
             />
           </div>
         </div>
+
       </div>
     </section>
   );

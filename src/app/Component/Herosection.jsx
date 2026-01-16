@@ -2,84 +2,99 @@
 
 import { ArrowUpRight } from "lucide-react";
 
-const features = [
-  {
-    title: "Reliable Locksmith",
-    desc: "Our certified technicians provide fast and professional key making, lock repairs, and ignition services you can trust.",
-    color: "from-[#1E3C72] to-[#2A5298]",
-  },
-  {
-    title: "Transparent Pricing",
-    desc: "We offer clear and upfront pricing for all services, with no hidden charges, ensuring complete customer satisfaction.",
-    color: "from-[#FBD786] to-[#f7797d]",
-    highlight: true,
-  },
-  {
-    title: "Local & Trusted",
-    desc: "Serving the community with dependable locksmith solutions, we are your neighborhood experts for home, office, and vehicle security.",
-    color: "from-[#1E3C72] to-[#2A5298]",
-  },
-  {
-    title: "24/7 Availability",
-    desc: "Locked out or need emergency locksmith services? We are available round-the-clock for urgent key and lock assistance.",
-    color: "from-[#1E3C72] to-[#2A5298]",
-  },
-];
-
-
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-full text-white h-[60vh] xl:h-[80vh] xl:mb-9 xl:pb-9 xl:px-6 xl:mb-22">
+    <section className="relative w-full text-white h-[65vh] md:h-[75vh] xl:h-[85vh] overflow-hidden" id="home">
+
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-black/10  xl:h-[80vh] h-[55vh] " // <-- Changed /80 to /50
-        style={{
-          backgroundImage: "url('/gallery/img7.webp')", // Update to your actual image path
-        }}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/img/road.webp')" }}
       >
-      <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
       </div>
 
-      {/* Overlay */}
-      <div className="relative z-10 px-6 py-24 md:py-32 xl:px-24 lg:px-16 pb-0">
-        <div className="max-w-5xl">
-          <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mb-6">
-            Keeps your lives <br /> safe and secure
+      {/* Content */}
+      <div className="relative z-10 px-5 sm:px-7 md:px-12 lg:px-20 xl:px-28 h-full flex flex-col lg:flex-row items-center lg:justify-between">
+
+        {/* LEFT CONTENT */}
+        <div className="max-w-xl text-center lg:text-left mt-14 lg:mt-0 animate-fadeIn">
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-5xl font-extrabold leading-tight drop-shadow-md">
+            SETIA TOUR AND TRAVELS <br />
+            <span className="text-[#ffd101]">Your Trusted Travel Partner</span>
           </h1>
-          <p className="text-gray-300 mb-4 max-w-2xl">
-           K.K All Keys Maker provides fast, reliable, and professional locksmith services. From key making and lock repairs to ignition services and advanced security solutions, we ensure safety and peace of mind.
+
+          <p className="text-base sm:text-lg md:text-xl mt-5 mb-8 text-gray-200 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+            Setia Tour and Travels provides safe, comfortable and affordable taxi services across India.
+            Whether it's a city ride, airport drop, or outstation trip – our professional drivers and
+            well-maintained cars ensure a smooth and enjoyable journey.
           </p>
-          <button className="bg-[#F5B841] text-black font-semibold px-6 py-3 rounded-md shadow-md hover:bg-[#f1ae23] transition">
-            DISCOVER MORE
+
+          <button className="bg-[#ffd101] text-black font-semibold px-7 py-3 shadow-lg hover:bg-[#ffb301] transition flex items-center gap-2 mx-auto lg:mx-0 rounded-full">
+            BOOK YOUR RIDE <ArrowUpRight size={20} />
           </button>
         </div>
 
-        {/* Feature Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:mt-16 mt-26 relative">
-          {features.map((feature, i) => (
-            <div
-              key={i}
-              className="rounded-lg overflow-hidden shadow-lg bg-white/10 backdrop-blur-md"
-            >
-              <div
-                className={`flex items-center justify-between px-5 py-4 bg-gradient-to-r ${
-                  feature.highlight
-                    ? "from-[#FBD786] to-[#f7797d]"
-                    : "from-[#1E3C72] to-[#2A5298]"
-                }`}
-              >
-                <h3 className="font-semibold xl:text-2xl text-lg">
-                  {feature.title}
-                </h3>
-                <ArrowUpRight size={18} />
-              </div>
-              <div className="bg-white text-gray-600 px-5 py-6">
-                <p className="text-sm">{feature.desc}</p>
-              </div>
-            </div>
-          ))}
+        {/* RIGHT CAR IMAGE */}
+        <div className="relative mt-10 lg:mt-0 animate-fadeUp">
+          <img
+            src="/img/herocar.webp"
+            alt="Taxi Car"
+            className="w-[240px] sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[520px] rounded-2xl shadow-2xl carFloat"
+          />
         </div>
       </div>
+
+      {/* Bottom Road Pattern */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+        <img
+          src="/img/pattern.webp"
+          alt="Moving Road"
+          className="w-full  h-full object-cover opacity-70"
+        />
+      </div>
+
+      {/* Animations */}
+      <style>{`
+        .carFloat {
+          animation: floatUpDown 3s ease-in-out infinite,
+                     carSideMove 6s ease-in-out infinite;
+        }
+
+        @keyframes floatUpDown {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-15px); }
+          100% { transform: translateY(0); }
+        }
+
+        @keyframes carSideMove {
+          0% { transform: translateX(15px); }
+          50% { transform: translateX(-15px); }
+          100% { transform: translateX(15px); }
+        }
+
+        .animate-fadeIn {
+          opacity: 0;
+          animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fadeUp {
+          opacity: 0;
+          animation: fadeUp 1.2s ease-out forwards;
+        }
+
+        @keyframes fadeUp {
+          0% { opacity: 0; transform: translateY(40px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+
     </section>
   );
 }

@@ -1,56 +1,51 @@
 "use client";
 import Image from "next/image";
-import { Lock, Car, Key, Wrench, Copy, Cog } from "lucide-react";
+import { Car, MapPin, Clock, Route, PhoneCall, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 const services = [
   {
-    title: "House Lockout",
-    icon: <Lock className="w-5 h-5 text-[#ffa41b]" />,
-    image: "/gallery/img8.webp",
-    text: "Locked out of your home? K.K All Keys Maker provides fast, reliable house lockout services, ensuring safe entry anytime, anywhere.",
-  },
-  {
-    title: "Car Lockout",
+    title: "Chandigarh to Delhi – ₹3500",
     icon: <Car className="w-5 h-5 text-[#ffa41b]" />,
-    image: "/gallery/img7.webp",
-    text: "Locked out of your car? K.K All Keys Maker provides fast, reliable, 24/7 car lockout assistance to get you back inside safely.",
+    image: "/taxiimg/front-left-side-47.webp",
+    text: "Affordable Chandigarh to Delhi taxi service with clean cars, professional drivers, and on-time pickup.",
   },
   {
-    title: "Lock Rekeying",
-    icon: <Key className="w-5 h-5 text-[#ffa41b]" />,
-    image: "/gallery/img1.webp",
-    text: "K.K All Keys Maker provides professional lock rekeying services, enhancing security by changing lock configurations without replacing the entire lock.",
+    title: "Chandigarh to Manali Trip – 4 Days ₹18,000",
+    icon: <MapPin className="w-5 h-5 text-[#ffa41b]" />,
+    image: "/taxiimg/2.webp",
+    text: "Enjoy a comfortable 4-day Manali tour package including sightseeing, safe travel & experienced drivers.",
   },
   {
-    title: "Lock Installation",
-    icon: <Wrench className="w-5 h-5 text-[#ffa41b]" />,
-    image: "/img/img1.webp",
-    text: "K.K All Keys Maker provides professional lock installation services, ensuring your home, office, or vehicle stays secure and protected.",
+    title: "All Types of Cars Available",
+    icon: <Route className="w-5 h-5 text-[#ffa41b]" />,
+    image: "/taxiimg/3.webp",
+    text: "Sedan, SUV, Innova, Tempo Traveller – choose any car according to your comfort and budget.",
   },
   {
-    title: "Key Duplication",
-    icon: <Copy className="w-5 h-5 text-[#ffa41b]" />,
-    image: "/img/img2.webp",
-    text: "K.K All Keys Maker offers precise, fast key duplication for homes, offices, and vehicles, ensuring secure, reliable, and convenient access.",
+    title: "All India Taxi Service",
+    icon: <Clock className="w-5 h-5 text-[#ffa41b]" />,
+    image: "/taxiimg/6.webp",
+    text: "We provide taxi services across all major Indian cities with reliable, safe and comfortable rides.",
   },
   {
-    title: "Ignition Repair",
-    icon: <Cog className="w-5 h-5 text-[#ffa41b]" />,
-    image: "/img/img.webp",
-    text: "Expert ignition repair services for cars, motorcycles, and scooters. Quick, reliable, and professional solutions to get your vehicle starting smoothly.",
+    title: "Daily One-Way Taxi",
+    icon: <PhoneCall className="w-5 h-5 text-[#ffa41b]" />,
+    image: "/taxiimg/7.webp",
+    text: "Book one-way taxi at the lowest price. No return charges. Fast service available 24/7.",
   },
 ];
 
 export default function Service() {
   return (
-    <section className="bg-gray-100 py-20">
-      <div className="max-w-6xl mx-auto px-4 text-center">
-        <p className="text-yellow-500 font-semibold uppercase text-sm mb-2">
-          What We Offer
+    <section className="bg-gray-100 py-20" id="services">
+      <div className="xl:px-32 px-4 text-center">
+        <p className="text-[#ffd101] font-semibold uppercase text-sm mb-2">
+          Our Taxi Services
         </p>
+
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-10">
-          Partner with K.K All Keys Maker  <br />for a Stronger Connection.
+          Premium Taxi Service for Every Route <br /> At Best Prices
         </h2>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -60,7 +55,7 @@ export default function Service() {
               className="group bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col"
             >
               {/* Header */}
-              <div className="bg-[radial-gradient(at_top_center,#0a3d62_0%,#1e5799_100%)] p-4 flex items-center gap-2 text-white font-semibold">
+              <div className="bg-[#ffd101] p-4 flex items-center gap-2 text-white font-semibold">
                 {service.icon}
                 <span>{service.title}</span>
               </div>
@@ -72,28 +67,50 @@ export default function Service() {
                   alt={service.title}
                   width={600}
                   height={400}
-                  className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
-              {/* Content */}
+              {/* Description */}
               <div className="p-5 text-justify flex-grow">
-                <p className="text-gray-600 text-sm opacity-80 group-hover:opacity-100 transition-all duration-300">
+                <p className="text-gray-600 text-sm">
                   {service.text}
                 </p>
               </div>
 
-              {/* Button (Always visible on mobile, hover on larger screens) */}
-           <Link href="/detail-service"> <div
-                className="border-t border-gray-200 p-4 text-justify 
-                opacity-100 translate-y-0 
-                sm:opacity-0 sm:group-hover:opacity-100 sm:translate-y-5 sm:group-hover:translate-y-0 
-                transition-all duration-500"
-              >
-                <button className="w-full sm:w-auto px-4 py-2 bg-[#ffa41b] text-gray-800 font-medium text-sm rounded-md hover:bg-yellow-500 transition">
-                  Learn More →
-                </button>
-              </div></Link> 
+              {/* Buttons Always Visible */}
+              <div className="border-t border-gray-200 p-4">
+                <div className="flex items-center justify-between gap-3">
+
+                  {/* Book Now */}
+                  <Link href="#book-now">
+                    <button className="w-full px-4 py-2 bg-[#ffa41b] text-gray-900 font-medium text-sm rounded-md hover:bg-[#ffd101] transition flex-1">
+                      Book Now
+                    </button>
+                  </Link>
+
+                  {/* WhatsApp or Call */}
+                  <a
+                    href="https://wa.me/+918847670935"
+                    target="_blank"
+                    className="flex-1"
+                  >
+                    <button className="w-full px-4 py-2 bg-green-500 text-white font-medium text-sm rounded-md hover:bg-green-600 transition flex items-center justify-center gap-1">
+                      <MessageSquare className="w-4 h-4" /> WhatsApp
+                    </button>
+                  </a>
+
+                  {/* Call Button Alternative (If you want instead of WhatsApp)
+                  <a href="tel:+91XXXXXXXXXX" className='flex-1'>
+                    <button className="w-full px-4 py-2 bg-blue-600 text-white font-medium text-sm rounded-md hover:bg-blue-700 transition flex items-center justify-center gap-1">
+                      <PhoneCall className="w-4 h-4" /> Call
+                    </button>
+                  </a> 
+                  */}
+
+                </div>
+              </div>
+
             </div>
           ))}
         </div>

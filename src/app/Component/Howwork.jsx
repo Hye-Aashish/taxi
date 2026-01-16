@@ -8,26 +8,26 @@ export default function Choose() {
     {
       id: 1,
       icon: <MessageSquare className="w-6 h-6 text-gray-800" />,
-      title: "Free Consultations",
-      text: "Get expert advice on key making, lock repairs, and security solutions with our friendly certified locksmiths at no cost.",
+      title: "Easy Booking",
+      text: "Book your taxi easily through call, WhatsApp, or online with instant confirmation.",
     },
     {
       id: 2,
       icon: <Calendar className="w-6 h-6 text-gray-800" />,
-      title: "Book Appointment",
-      text: "Schedule your locksmith service at your convenience, whether for home, office, or vehicle security needs.",
+      title: "24/7 Availability",
+      text: "We provide round-the-clock taxi services for all local and outstation trips.",
     },
     {
       id: 3,
       icon: <Layers className="w-6 h-6 text-gray-800" />,
-      title: "Tools & Equipment",
-      text: "We use high-quality tools and modern techniques to ensure precise key cutting and secure lock installations.",
+      title: "All India Routes",
+      text: "From short city rides to long tours, we cover all major destinations across India.",
     },
     {
       id: 4,
       icon: <KeyRound className="w-6 h-6 text-gray-800" />,
-      title: "Key & Lock Repair",
-      text: "Our experts handle all types of key repairs, lock replacements, and ignition services efficiently and safely.",
+      title: "Comfortable & Clean Cars",
+      text: "Travel comfortably in well-maintained cars with professional and experienced drivers.",
     },
   ];
 
@@ -44,11 +44,11 @@ export default function Choose() {
       <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px]"></div>
 
       <div className="relative z-10 text-center mb-12">
-        <p className="text-yellow-600 uppercase text-sm tracking-wide font-medium">
-          How It Works
+        <p className="text-[#ffa41b] uppercase text-sm tracking-wide font-medium">
+          Why Choose Us
         </p>
         <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mt-2">
-          Trusted Locksmith Services for <br /> Your Home, Office, and Vehicle
+          Reliable Taxi Services for Every Trip, Anytime – Anywhere
         </h2>
       </div>
 
@@ -64,7 +64,7 @@ export default function Choose() {
               {index + 1}
             </div>
             <div className="relative z-10 flex flex-col items-center">
-              <div className="bg-[#ffa41b] p-4 rounded-full mb-4 shadow-md">
+              <div className="bg-[#ffd101] p-4 rounded-full mb-4 shadow-md">
                 {item.icon}
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">

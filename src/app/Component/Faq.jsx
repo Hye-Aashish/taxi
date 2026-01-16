@@ -1,107 +1,109 @@
 "use client";
 import { useState } from "react";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import Image from "next/image";
+import { FiPlus, FiMinus } from "react-icons/fi";
 
 const faqs = [
   {
-    question: "Do you provide emergency locksmith services?",
+    id: 1,
+    question: "Do you provide one-way taxi service?",
     answer:
-      "Yes! We offer 24/7 emergency locksmith services for homes, offices, and vehicles. Our team responds quickly to any lockout or urgent situation.",
+      "Yes, we offer daily one-way taxi service for all major routes including Chandigarh, Delhi, Manali, Shimla, and more.",
   },
   {
-    question: "Can you make duplicate keys for my home and car?",
+    id: 2,
+    question: " How do I book a taxi?",
     answer:
-      "Absolutely. We specialize in key duplication for all types of locks, including house keys, car keys, and high-security keys.",
+      "You can book easily through call, WhatsApp, or online. Once details are confirmed, your driver will be assigned instantly.",
   },
   {
-    question: "Do you install advanced security systems?",
+    id: 3,
+    question: "Are your prices fixed or do they change?",
     answer:
-      "Yes, we provide installation of smart locks, CCTV systems, and other advanced security solutions to ensure maximum protection for your property.",
+      "Our prices are fixed and transparent. No hidden charges—fuel, tolls, and taxes are clearly informed during booking.",
   },
   {
-    question: "How long does it take to repair a lock?",
+    id: 4,
+    question: "What cars do you provide?",
     answer:
-      "Most lock repairs are completed within 30-60 minutes depending on the complexity. Our technicians ensure precise and reliable service every time.",
-  },
-  {
-    question: "Do you offer ignition repair for vehicles?",
-    answer:
-      "Yes, we provide professional ignition repair and replacement services for cars, motorcycles, and scooters to get you back on the road quickly.",
-  },
-  {
-    question: "Are your locksmiths certified and experienced?",
-    answer:
-      "All our locksmiths are certified professionals with years of experience in residential, commercial, and automotive locksmith services.",
-  },
-  {
-    question: "What areas do you cover?",
-    answer:
-      "We provide locksmith services in the local community and surrounding areas. Contact us to confirm service availability in your location.",
-  },
-  {
-    question: "Do you charge hidden fees?",
-    answer:
-      "No, we believe in transparent pricing. All costs are communicated upfront with no hidden charges.",
-  },
-  {
-    question: "Can you replace broken keys or lock parts?",
-    answer:
-      "Yes, we offer key cutting, broken key extraction, and replacement of lock components with professional-grade tools.",
-  },
-  {
-    question: "How do I schedule an appointment?",
-    answer:
-      "You can call us directly or book an appointment through our website. We provide flexible scheduling to suit your needs.",
+      "We offer all types of vehicles: Sedan, SUV, Innova, Crysta, Ertiga, Dzire, and Tempo Traveller depending on your requirement.",
   },
 ];
 
-export default function FAQSection() {
-  const [openIndexes, setOpenIndexes] = useState([0, 1]);
+export default function FaqSection() {
+  const [open, setOpen] = useState(1);
 
-  const toggleFAQ = (index) => {
-    setOpenIndexes((prev) =>
-      prev.includes(index)
-        ? prev.filter((i) => i !== index)
-        : [...prev, index]
-    );
+  const toggle = (id) => {
+    setOpen(open === id ? null : id);
   };
 
   return (
-    <section className="py-16 bg-[#f9fafb] text-[#0A2540]">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <p className="text-[#F9C643] uppercase text-sm font-semibold tracking-wide mb-2">
-          Common Questions
-        </p>
-        <h2 className="text-2xl md:text-4xl font-bold leading-tight mb-10">
-          Frequently Asked Questions <br /> About Our Locksmith Services
-        </h2>
+    <section className="w-full py-16 md:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+        
+        {/* LEFT SIDE */}
+        <div>
+          <p className="text-yellow-500 font-bold uppercase text-xs md:text-sm tracking-widest mb-2">
+            FAQ'S
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {faqs.map((faq, index) => (
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 mb-4">
+            General <span className="text-yellow-500">Frequently</span> Asked Questions
+          </h2>
+
+          <p className="text-gray-500 leading-relaxed mb-6">
+      Quick and clear answers to common queries about our taxi and tour services.
+          </p>
+
+          <div className="w-full rounded-xl overflow-hidden">
+            <img
+              src="/gallery/faq.webp"
+              alt="FAQ Image"
+              width={600}
+              height={400}
+              className="rounded-xl object-cover w-full h-auto"
+            />
+          </div>
+        </div>
+
+        {/* RIGHT SIDE – ACCORDION */}
+        <div className="space-y-4">
+          {faqs.map((item) => (
             <div
-              key={index}
-              className="bg-[#0A2540] text-white rounded-md overflow-hidden transition-all duration-300"
+              key={item.id}
+              className="bg-white shadow-lg border border-gray-100 rounded-xl"
             >
+              {/* Header */}
               <button
-                className="w-full flex justify-between items-center text-left px-5 py-4 font-medium text-[16px] focus:outline-none"
-                onClick={() => toggleFAQ(index)}
+                onClick={() => toggle(item.id)}
+                className="w-full flex justify-between items-center px-4 md:px-6 py-4 md:py-5"
               >
-                {faq.question}
-                {openIndexes.includes(index) ? (
-                  <FaChevronUp className="text-[#F9C643]" />
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-yellow-400 text-white flex items-center justify-center font-bold text-lg md:text-xl">
+                    ?
+                  </div>
+                  <h3 className="text-base md:text-lg font-semibold text-gray-900">
+                    {item.question}
+                  </h3>
+                </div>
+
+                {open === item.id ? (
+                  <FiMinus className="text-gray-700 text-xl" />
                 ) : (
-                  <FaChevronDown className="text-[#F9C643]" />
+                  <FiPlus className="text-gray-700 text-xl" />
                 )}
               </button>
 
-              {openIndexes.includes(index) && (
-                <div className="bg-gray-100 text-gray-700 px-5 py-4 text-justify text-sm transition-all duration-500">
-                  {faq.answer}
+              {/* Content */}
+              {open === item.id && (
+                <div className="px-6 md:px-10 pb-4 md:pb-5 text-gray-600 text-sm md:text-base leading-relaxed">
+                  {item.answer}
                 </div>
               )}
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

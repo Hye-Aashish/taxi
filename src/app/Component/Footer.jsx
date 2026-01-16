@@ -7,7 +7,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
-import { FiPhoneCall } from "react-icons/fi";
+import { FiMapPin } from "react-icons/fi";
 import Link from "next/link";
 
 export default function Footer() {
@@ -25,7 +25,7 @@ export default function Footer() {
               Email Support
             </p>
             <p className="text-sm md:text-lg font-medium">
-              kkallkeysmaker@gmail.com
+             harshsetia140@gmail.com
             </p>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default function Footer() {
               Customer Support
             </p>
             <p className="text-sm md:text-lg font-medium text-white">
-              +91 63977 54903
+              +91 88476 70935
             </p>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function Footer() {
         {/* Address */}
         <div className="flex items-center gap-3 hover:scale-[1.02] transition-all duration-300">
           <div className="bg-[#0E1D2C] p-3 rounded-md shadow-md flex items-center justify-center">
-            <FiPhoneCall className="text-[#F9C643] text-lg md:text-xl" />
+            <FiMapPin className="text-[#F9C643] text-lg md:text-xl" />
           </div>
           <div>
             <p className="text-xs md:text-sm font-semibold uppercase">
@@ -67,11 +67,11 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <h2 className="">
-            <img src="/img/logo.png" alt="footerlogo" className="rounded-md"/>
+              <img src="/logo.webp" alt="footerlogo" className="rounded-md w-38 xl:w-full" />
             </h2>
             <p className="mt-4 text-gray-300 text-sm leading-relaxed">
-              Fast, reliable, and professional locksmith services for homes,
-              offices, and vehicles. Your security is our priority.
+              Setia Tour and Travels offers premium taxi and travel services across India.
+              Comfortable, safe, and reliable rides for city, airport, and outstation trips.
             </p>
 
             {/* Social Icons */}
@@ -100,7 +100,7 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-300 text-sm">
               {["Home", "About", "Services", "Blog", "Contact"].map((item, i) => (
                 <li key={i} className="hover:text-[#F9C643] cursor-pointer transition-all">
-                  <Link href={`/${item.toLowerCase()}`}>{item}</Link>
+                  <Link href={`#`}>{item}</Link>
                 </li>
               ))}
             </ul>
@@ -113,15 +113,15 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-gray-300 text-sm">
               {[
-                "House Lockout",
-                "Car Lockout",
-                "Lock Rekeying",
-                "Lock Installation",
-                "Key Duplication",
-                "Ignition Repair",
+                "City Taxi",
+                "Airport Pickup & Drop",
+                "Outstation Trips",
+                "Package Tours",
+                "Luxury Cars",
+                "Tour Guides",
               ].map((item, i) => (
                 <li key={i} className="hover:text-[#F9C643] cursor-pointer transition-all">
-                  <Link href={`/`}>{item}</Link>
+                  <Link href={`/services`}>{item}</Link>
                 </li>
               ))}
             </ul>
@@ -133,10 +133,10 @@ export default function Footer() {
               Support
             </h3>
             <ul className="space-y-2 text-gray-300 text-sm">
-              {["Help Center", "Send Ticket", "FAQ",  "Forum Community"].map(
+              {["Help Center", "Send Ticket", "FAQ", "Travel Guide"].map(
                 (item, i) => (
                   <li key={i} className="hover:text-[#F9C643] cursor-pointer transition-all">
-                    <Link href={`/`}>{item}</Link>
+                    <Link href={`/support`}>{item}</Link>
                   </li>
                 )
               )}
@@ -149,7 +149,7 @@ export default function Footer() {
               Newsletter
             </h3>
             <p className="text-gray-300 text-sm mb-4">
-              Get updates, news, and free insights from K.K All Keys Maker.
+              Subscribe for latest offers, updates, and travel tips from Setia Tour and Travels.
             </p>
             <div className="flex flex-col sm:flex-row w-full">
               <input
@@ -158,28 +158,26 @@ export default function Footer() {
                 className="w-full px-3 py-2 text-black bg-white rounded-md sm:rounded-l-md sm:rounded-r-none focus:outline-none mb-3 sm:mb-0"
               />
               <button className="bg-[#F9C643] text-[#0E1D2C] text-sm font-semibold px-4 py-2 rounded-md sm:rounded-l-none sm:rounded-r-md flex items-center justify-center gap-2 hover:bg-[#ffa41b] transition-all duration-300 text-nowrap">
-                <FaEnvelope /> SIGN UP
+                <FaEnvelope /> SUBSCRIBE
               </button>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-       <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col items-center text-gray-400 text-xs md:text-sm text-center gap-3 ">
-  <p>
-    Copyright © 2025 K.K All Keys Maker — Design by{" "}
-    <a
-      href="https://www.futuretouch.in/" // Replace with actual link
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#F9C643] hover:underline"
-    >
-      Future IT Touch Pvt. Ltd ❤️
-    </a>
-  </p>
-
-</div>
-
+        <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col items-center text-gray-400 text-xs md:text-sm text-center gap-3 ">
+          <p>
+            Copyright © 2025 Setia Tour and Travels — Design by{" "}
+            <a
+              href="https://www.futuretouch.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#F9C643] hover:underline"
+            >
+              Future IT Touch Pvt. Ltd ❤️
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
