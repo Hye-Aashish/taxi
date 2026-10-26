@@ -18,26 +18,9 @@ export default function HeroSection() {
         style={{ backgroundImage: "url('/img/banner.webp')" }}
       />
 
-      {/* Background Video */}
-      <div className="absolute inset-0 z-10">
-        <video
-          className="h-full w-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/images/1.webp"
-        >
-          <source
-            src="/images/videocar.mp4"
-            type="video/mp4"
-          />
-        </video>
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#001329]/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#001329]/90 via-[#001329]/60 to-transparent" />
-      </div>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 z-10 bg-[#001329]/80" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#001329]/95 via-[#001329]/75 to-transparent" />
 
       {/* Content */}
       <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8">
