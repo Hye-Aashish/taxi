@@ -1,100 +1,108 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import React from "react";
+import Link from "next/link";
+import {
+  FaCar,
+  FaArrowRight,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full text-white h-[65vh] md:h-[75vh] xl:h-[85vh] overflow-hidden" id="home">
+    <section className="relative flex min-h-[520px] items-center overflow-hidden bg-[#00193d] sm:min-h-[580px] lg:min-h-[680px]">
 
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/img/road.webp')" }}
-      >
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/img/banner.webp')" }}
+      />
+
+      {/* Background Video */}
+      <div className="absolute inset-0 z-10">
+        <video
+          className="h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/1.webp"
+        >
+          <source
+            src="/images/videocar.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-[#001329]/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001329]/90 via-[#001329]/60 to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-5 sm:px-7 md:px-12 lg:px-20 xl:px-28 h-full flex flex-col lg:flex-row items-center lg:justify-between">
+      <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center py-16 text-center lg:py-24">
+          <div className="w-full max-w-4xl">
 
-        {/* LEFT CONTENT */}
-        <div className="max-w-xl text-center lg:text-left mt-14 lg:mt-0 animate-fadeIn">
+            {/* Badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-sm sm:text-sm">
+              <FaCar className="text-[#ffa41b]" />
+              Trusted Transportation Partner Since 2005
+            </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-5xl font-extrabold leading-tight drop-shadow-md">
-            SETIA TOUR AND TRAVELS <br />
-            <span className="text-[#ffd101]">Your Trusted Travel Partner</span>
-          </h1>
+            {/* Heading */}
+            <h1 className="mb-6 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+              Reliable Transport Solutions for
+              <span className="mt-2 block text-[#ffa41b]">
+                Government & Corporate Needs
+              </span>
+            </h1>
 
-          <p className="text-base sm:text-lg md:text-xl mt-5 mb-8 text-gray-200 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-            Setia Tour and Travels provides safe, comfortable and affordable taxi services across India.
-            Whether it's a city ride, airport drop, or outstation trip – our professional drivers and
-            well-maintained cars ensure a smooth and enjoyable journey.
-          </p>
+            {/* Description */}
+            <p className="mx-auto mb-8 max-w-3xl px-2 text-base leading-7 text-gray-200 sm:text-lg md:text-xl">
+              Guru Nanak Tours & Travels provides dependable vehicle
+              outsourcing, official duty vehicles, employee transportation,
+              healthcare transport and airport transfers. 
+            </p>
 
-          <button className="bg-[#ffd101] text-black font-semibold px-7 py-3 shadow-lg hover:bg-[#ffb301] transition flex items-center gap-2 mx-auto lg:mx-0 rounded-full">
-            BOOK YOUR RIDE <ArrowUpRight size={20} />
-          </button>
-        </div>
+            {/* Service Highlights */}
+            <div className="mb-9 flex flex-wrap items-center justify-center gap-3 text-sm text-white sm:gap-5">
+              <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                Government Transport
+              </span>
+              <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                Corporate Travel
+              </span>
+              <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                Airport Transfers
+              </span>
+            </div>
 
-        {/* RIGHT CAR IMAGE */}
-        <div className="relative mt-10 lg:mt-0 animate-fadeUp">
-          <img
-            src="/img/herocar.webp"
-            alt="Taxi Car"
-            className="w-[240px] sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[520px] rounded-2xl shadow-2xl carFloat"
-          />
+            {/* Buttons */}
+            <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
+
+              <Link
+                href="#book-now"
+                className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#ffa41b] px-7 py-4 text-sm font-bold text-[#00193d] shadow-lg transition duration-300 hover:bg-white sm:px-9 sm:text-base"
+              >
+                Request a Transport Quote
+                <FaArrowRight />
+              </Link>
+
+              <Link
+                href="#services"
+                className="inline-flex items-center justify-center gap-3 rounded-lg border border-white/50 bg-white/10 px-7 py-4 text-sm font-bold text-white backdrop-blur-sm transition duration-300 hover:bg-white hover:text-[#00193d] sm:px-9 sm:text-base"
+              >
+                Explore Our Services
+              </Link>
+
+            </div>
+
+      
+
+          </div>
         </div>
       </div>
-
-      {/* Bottom Road Pattern */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-        <img
-          src="/img/pattern.webp"
-          alt="Moving Road"
-          className="w-full  h-full object-cover opacity-70"
-        />
-      </div>
-
-      {/* Animations */}
-      <style>{`
-        .carFloat {
-          animation: floatUpDown 3s ease-in-out infinite,
-                     carSideMove 6s ease-in-out infinite;
-        }
-
-        @keyframes floatUpDown {
-          0% { transform: translateY(0); }
-          50% { transform: translateY(-15px); }
-          100% { transform: translateY(0); }
-        }
-
-        @keyframes carSideMove {
-          0% { transform: translateX(15px); }
-          50% { transform: translateX(-15px); }
-          100% { transform: translateX(15px); }
-        }
-
-        .animate-fadeIn {
-          opacity: 0;
-          animation: fadeIn 1s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-          0% { opacity: 0; transform: translateY(20px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-fadeUp {
-          opacity: 0;
-          animation: fadeUp 1.2s ease-out forwards;
-        }
-
-        @keyframes fadeUp {
-          0% { opacity: 0; transform: translateY(40px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
-
     </section>
   );
 }

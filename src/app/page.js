@@ -3,26 +3,31 @@ import FAQSection from './Component/Faq'
 import Choose from './Component/Choose'
 import Howwork from './Component/Howwork'
 import Service from './Component/Service'
-import ServicesSection from './Component/Servicesection'
+
 import Counter from './Component/Counter'
 import About from './Component/About'
 import HeroSection from './Component/Herosection'
 import BlogSection from './Component/Blog'
 import Contact from './Component/Contact'
 
+
 const page = () => {
   return (
     <>
       <HeroSection />
       <About />
-      <Counter />
+
       <Service />
-      <ServicesSection />
+      {/* <ServicesSection /> */}
       <Choose />
-      <Contact/>
+          <Counter />
       <FAQSection />
       <Howwork />
+        <Contact/>
       <BlogSection />
+
+      
+      
 
     </>
   )

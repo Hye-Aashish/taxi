@@ -26,11 +26,11 @@ export default function Navbar() {
       <header
         className={`${
           fixed ? "fixed top-0 shadow-md" : "relative"
-        } w-full bg-[#fbf5e7] flex items-center justify-between px-6 md:px-16 lg:px-28 py-3 z-[9999] transition-all duration-300`}
+        } w-full bg-white flex items-center justify-between px-6 md:px-16 lg:px-28  z-[9999] transition-all duration-300`}
       >
         {/* Logo */}
         <a href="#home">
-          <img src="/logo.webp" alt="Logo" className="w-42 md:w-48" />
+          <img src="/img/logo.png" alt="Logo" className="w-36 py-4"  />
         </a>
 
         {/* Desktop Menu */}
@@ -48,7 +48,7 @@ export default function Navbar() {
 
         {/* Button */}
         <a href="#contact">
-          <button className="hidden lg:block bg-[#ffd101] hover:bg-[#e4ac2c] text-[#1a2a3b] font-medium text-sm px-6 py-3 transition-all">
+          <button className="hidden lg:block bg-[#00193d] text-white font-medium text-sm px-6 py-3 transition-all">
             FREE CONSULTATION
           </button>
         </a>
@@ -69,7 +69,7 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between p-4 border-b">
-          <img src="/logo.webp" alt="GoLock Logo" className="w-28" />
+          <img src="/img/logo.png" alt="Logo" className="w-28" />
           <FaTimes
             className="text-2xl text-[#1a2a3b] cursor-pointer"
             onClick={() => setIsSidebarOpen(false)}
@@ -92,7 +92,7 @@ export default function Navbar() {
 
         <div className="p-6">
           <a href="#contact">
-            <button className="w-full bg-[#ffa41b] hover:bg-[#e4ac2c] text-[#1a2a3b] font-medium py-3 rounded-md">
+            <button className="w-full bg-[#ffa41b] hover:bg-[#e4ac2c] text-white font-medium py-3 rounded-md">
               FREE CONSULTATION
             </button>
           </a>

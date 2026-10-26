@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FaUser, FaPhoneAlt, FaEnvelope, FaBriefcase } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ export default function Contact() {
       moveType: formData.moveType || "Household",
 
       message: formData.message,
-      mail_to: "harshsetia140@gmail.com",
+      mail_to: "raptocab@gmail.com",
     };
 
     try {
@@ -51,17 +52,7 @@ export default function Contact() {
       const data = await response.json().catch(() => ({}));
 
       if (response.ok) {
-        // Redirect
         window.location.href = "/thankyou";
-
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          message: "",
-          serviceType: "",
-          moveType: "",
-        });
       } else {
         alert(data?.message || "Failed to send message");
       }
@@ -73,84 +64,112 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-start">
-        
-        {/* LEFT SIDE FORM */}
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900">Contact Us</h2>
+    <section className="py-20 bg-gradient-to-br from-slate-100 to-slate-200">
+      <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+
+        {/* LEFT FORM CARD */}
+        <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl p-8 lg:p-12">
+
+          <h2 className="text-3xl font-bold text-gray-900">
+            Get In Touch
+          </h2>
+
+          <p className="text-gray-600 mt-2">
+            Fill the form and our team will contact you shortly.
+          </p>
 
           <form
             onSubmit={handleSubmit}
-            className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            <input
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              type="text"
-              placeholder="Name"
-              required
-              className="bg-gray-100 p-4 outline-none"
-            />
 
-            <input
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              type="text"
-              placeholder="Phone"
-              required
-              className="bg-gray-100 p-4 outline-none"
-            />
+            {/* NAME */}
+            <div className="relative">
+              <FaUser className="absolute left-4 top-4 text-gray-400" />
+              <input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                type="text"
+                placeholder="Full Name"
+                required
+                className="w-full pl-12 pr-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+            </div>
 
-            <input
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              type="email"
-              placeholder="Email"
-              required
-              className="bg-gray-100 p-4 outline-none md:col-span-2"
-            />
+            {/* PHONE */}
+            <div className="relative">
+              <FaPhoneAlt className="absolute left-4 top-4 text-gray-400" />
+              <input
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                type="text"
+                placeholder="Phone Number"
+                required
+                className="w-full pl-12 pr-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+            </div>
 
-            <input
-              name="serviceType"
-              value={formData.serviceType}
-              onChange={handleChange}
-              type="text"
-              placeholder="Service Type"
-              className="bg-gray-100 p-4 outline-none md:col-span-2"
-            />
+            {/* EMAIL */}
+            <div className="relative md:col-span-2">
+              <FaEnvelope className="absolute left-4 top-4 text-gray-400" />
+              <input
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                type="email"
+                placeholder="Email Address"
+                required
+                className="w-full pl-12 pr-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+            </div>
 
+            {/* SERVICE */}
+            <div className="relative md:col-span-2">
+              <FaBriefcase className="absolute left-4 top-4 text-gray-400" />
+              <input
+                name="serviceType"
+                value={formData.serviceType}
+                onChange={handleChange}
+                type="text"
+                placeholder="Service Type (Packing, Shifting...)"
+                className="w-full pl-12 pr-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+            </div>
+
+            {/* MESSAGE */}
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
-              rows="5"
-              placeholder="Message"
+              rows="4"
+              placeholder="Your Message"
               required
-              className="bg-gray-100 p-4 outline-none resize-none md:col-span-2"
+              className="md:col-span-2 w-full p-4 rounded-lg bg-gray-100 focus:ring-2 focus:ring-blue-500 outline-none resize-none"
             />
 
+            {/* BUTTON */}
             <button
               type="submit"
               disabled={loading}
-              className="bg-[#042441] text-white font-semibold px-8 py-4 w-fit hover:opacity-90 transition disabled:opacity-50"
+              className="md:col-span-2 bg-[#00193d] text-white font-semibold py-3 rounded-lg hover:scale-[1.02] transition-all disabled:opacity-60"
             >
-              {loading ? "SENDING..." : "SEND MESSAGE"}
+              {loading ? "Sending..." : "Send Message"}
             </button>
+
           </form>
         </div>
 
-        {/* RIGHT SIDE MAP */}
-        <div className="w-full h-[650px]">
+        {/* RIGHT MAP CARD */}
+        <div className="rounded-2xl overflow-hidden shadow-xl h-[550px]">
           <iframe
             className="w-full h-full border-0"
             loading="lazy"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.90089943376!2d77.46612593299314!3d12.953945614011557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1765531962826!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d13725.578313608801!2d76.72742240377514!3d30.679172443758556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHL-460%2C%20Phase-9%2C%20Mohali%2C%20Punjab!5e0!3m2!1sen!2sin!4v1793025595404!5m2!1sen!2sin"
           />
         </div>
+
       </div>
     </section>
   );

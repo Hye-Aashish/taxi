@@ -1,102 +1,112 @@
 "use client";
+
 import { useState } from "react";
-import Image from "next/image";
 import { FiPlus, FiMinus } from "react-icons/fi";
 
 const faqs = [
   {
     id: 1,
-    question: "Do you provide one-way taxi service?",
+    question: "What services does Guru Nanak Tours & Travels provide?",
     answer:
-      "Yes, we offer daily one-way taxi service for all major routes including Chandigarh, Delhi, Manali, Shimla, and more.",
+      "Guru Nanak Tours & Travels provides reliable transportation solutions for government departments, healthcare institutions, and corporate organizations, with a focus on safe, comfortable, and efficient travel.",
   },
   {
     id: 2,
-    question: " How do I book a taxi?",
+    question: "How long has Guru Nanak Tours & Travels been in business?",
     answer:
-      "You can book easily through call, WhatsApp, or online. Once details are confirmed, your driver will be assigned instantly.",
+      "We have been serving the transportation industry since 2005, building our reputation through professional service, reliable operations, and a strong commitment to customer satisfaction.",
   },
   {
     id: 3,
-    question: "Are your prices fixed or do they change?",
+    question: "Does Guru Nanak Tours & Travels provide corporate and government transport?",
     answer:
-      "Our prices are fixed and transparent. No hidden charges—fuel, tolls, and taxes are clearly informed during booking.",
+      "Yes, we specialize in transportation solutions for government departments, healthcare institutions, and corporate organizations, tailored to their official and institutional travel requirements.",
   },
   {
     id: 4,
-    question: "What cars do you provide?",
+    question: "Why choose Guru Nanak Tours & Travels?",
     answer:
-      "We offer all types of vehicles: Sedan, SUV, Innova, Crysta, Ertiga, Dzire, and Tempo Traveller depending on your requirement.",
+      "With experience since 2005, we prioritize safety, punctuality, professionalism, and dependable service. Our goal is to build long-term relationships by delivering transportation solutions that meet our clients' needs.",
   },
+
 ];
 
 export default function FaqSection() {
   const [open, setOpen] = useState(1);
 
-  const toggle = (id) => {
-    setOpen(open === id ? null : id);
+const toggle = (id) => {
+  setOpen(open === id ? null : id);
+
   };
 
   return (
-    <section className="w-full py-16 md:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-        
+    <section className="w-full bg-white py-16 md:py-20 xl:mt-9">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
+
         {/* LEFT SIDE */}
         <div>
-          <p className="text-yellow-500 font-bold uppercase text-xs md:text-sm tracking-widest mb-2">
-            FAQ'S
+          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-yellow-500 md:text-sm">
+            Frequently Asked Questions
           </p>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 mb-4">
-            General <span className="text-yellow-500">Frequently</span> Asked Questions
+          <h2 className="mb-4 text-3xl font-bold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
+            Guru Nanak Tours & Travels{" "}
+            <span className="text-yellow-500">FAQs</span>
           </h2>
 
-          <p className="text-gray-500 leading-relaxed mb-6">
-      Quick and clear answers to common queries about our taxi and tour services.
+          <p className="mb-6 leading-relaxed text-gray-500">
+            Find answers to common questions about our transportation
+            services, corporate travel solutions, government transport,
+            and institutional requirements. Serving clients with trust
+            and commitment since 2005.
           </p>
 
-          <div className="w-full rounded-xl overflow-hidden">
+          <div className="w-full overflow-hidden rounded-xl">
             <img
               src="/gallery/faq.webp"
-              alt="FAQ Image"
+              alt="Guru Nanak Tours & Travels transportation services"
               width={600}
               height={400}
-              className="rounded-xl object-cover w-full h-auto"
+              loading="lazy"
+              className="h-auto w-full rounded-xl object-cover"
             />
           </div>
         </div>
 
-        {/* RIGHT SIDE – ACCORDION */}
+        {/* RIGHT SIDE - ACCORDION */}
         <div className="space-y-4">
           {faqs.map((item) => (
             <div
               key={item.id}
-              className="bg-white shadow-lg border border-gray-100 rounded-xl"
+              className="rounded-xl border border-gray-100 bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl"
             >
-              {/* Header */}
+              {/* Question */}
               <button
+                type="button"
                 onClick={() => toggle(item.id)}
-                className="w-full flex justify-between items-center px-4 md:px-6 py-4 md:py-5"
+                aria-expanded={open === item.id}
+                className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left md:px-6 md:py-5"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-yellow-400 text-white flex items-center justify-center font-bold text-lg md:text-xl">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-yellow-400 text-lg font-bold text-white md:h-10 md:w-10 md:text-xl">
                     ?
                   </div>
-                  <h3 className="text-base md:text-lg font-semibold text-gray-900">
+
+                  <h3 className="text-sm font-semibold text-gray-900 md:text-lg">
                     {item.question}
                   </h3>
                 </div>
 
                 {open === item.id ? (
-                  <FiMinus className="text-gray-700 text-xl" />
+                  <FiMinus className="shrink-0 text-xl text-gray-700" />
                 ) : (
-                  <FiPlus className="text-gray-700 text-xl" />
+                  <FiPlus className="shrink-0 text-xl text-gray-700" />
                 )}
               </button>
 
-              {/* Content */}
+              {/* Answer */}
               {open === item.id && (
-                <div className="px-6 md:px-10 pb-4 md:pb-5 text-gray-600 text-sm md:text-base leading-relaxed">
+                <div className="px-5 pb-5 pl-16 text-sm leading-relaxed text-gray-600 md:pl-20 md:text-base">
                   {item.answer}
                 </div>
               )}
