@@ -16,6 +16,10 @@ const Topbar = () => {
           </div>
           <div className="flex items-center gap-2">
             <FiPhoneCall className="text-white shrink-0" />
+            <a href="tel:+919876239897" className="hover:underline font-medium">
+              +91-9876239897
+            </a>
+            <span className="text-white/60">|</span>
             <a href="tel:+919872632396" className="hover:underline">
               +91-9872632396
             </a>

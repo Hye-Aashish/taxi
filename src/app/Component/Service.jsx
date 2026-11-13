@@ -49,7 +49,7 @@ const services = [
  
 ];
 
-const whatsappNumber = "919872632396";
+const whatsappNumber = "919876239897";
 
 export default function Service() {
   return (

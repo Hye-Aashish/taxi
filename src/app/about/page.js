@@ -151,6 +151,9 @@ export default function AboutPage() {
                       Call For Enquiries
                     </p>
                     <div className="flex flex-col text-base sm:text-lg font-bold text-[#00193d]">
+                      <a href="tel:+919876239897" className="hover:text-[#ffa41b] transition">
+                        +91-9876239897
+                      </a>
                       <a href="tel:+919872632396" className="hover:text-[#ffa41b] transition">
                         +91-9872632396
                       </a>
@@ -447,11 +450,11 @@ export default function AboutPage() {
             </Link>
 
             <a
-              href="tel:+919872632396"
+              href="tel:+919876239897"
               className="inline-flex items-center gap-2 rounded-lg border border-white/40 bg-white/10 px-8 py-3.5 text-sm sm:text-base font-bold text-white backdrop-blur hover:bg-white hover:text-[#00193d] transition"
             >
               <Phone size={18} />
-              <span>+91-9872632396</span>
+              <span>+91-9876239897</span>
             </a>
           </div>
         </div>

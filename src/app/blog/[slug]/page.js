@@ -63,7 +63,7 @@ export default async function BlogDetailsPage({ params }) {
   // Other related posts (excluding current)
   const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
-  const whatsappNumber = "919872632396";
+  const whatsappNumber = "919876239897";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     `Hello Guru Nanak Tours & Travels, I read your article "${post.title}" and would like to enquire about transport services.`
   )}`;
@@ -281,11 +281,11 @@ export default async function BlogDetailsPage({ params }) {
 
                 <div className="mt-6 space-y-3">
                   <a
-                    href="tel:+919872632396"
+                    href="tel:+919876239897"
                     className="w-full inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#ffa41b] px-4 py-3.5 text-sm font-bold text-[#00193d] shadow-md hover:bg-white transition"
                   >
                     <FaPhoneAlt />
-                    <span>Call +91-9872632396</span>
+                    <span>Call +91-9876239897</span>
                   </a>
 
                   <a
@@ -458,11 +458,11 @@ export default async function BlogDetailsPage({ params }) {
               <ArrowRight size={16} />
             </Link>
             <a
-              href="tel:+919872632396"
+              href="tel:+919876239897"
               className="inline-flex items-center gap-2 rounded-lg border border-white/40 px-7 py-3 text-sm sm:text-base font-bold text-white hover:bg-white hover:text-[#00193d] transition"
             >
               <Phone size={16} />
-              <span>+91-9872632396</span>
+              <span>+91-9876239897</span>
             </a>
           </div>
         </div>

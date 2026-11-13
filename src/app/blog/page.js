@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Calendar, User, ArrowRight, Clock, Tag } from "lucide-react";
+import { Calendar, User, ArrowRight, Clock, Tag, Phone } from "lucide-react";
 import PageHeader from "../Component/PageHeader";
 import { blogPosts } from "../../data/blogs";
 
@@ -121,6 +121,13 @@ export default function BlogListingPage() {
               <span>Contact Us Today</span>
               <ArrowRight size={16} />
             </Link>
+            <a
+              href="tel:+919876239897"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/40 px-7 py-3 text-sm sm:text-base font-bold text-white hover:bg-white hover:text-[#00193d] transition"
+            >
+              <Phone size={16} />
+              <span>+91-9876239897</span>
+            </a>
           </div>
         </div>
       </section>

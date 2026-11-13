@@ -60,6 +60,11 @@ export default function About() {
               <div>
                 <p className="text-gray-500 text-sm">Call For Enquiries</p>
                 <p className="text-lg md:text-xl font-bold text-gray-900">
+                  <a href="tel:+919876239897" className="hover:text-yellow-600">
+                    +91-9876239897
+                  </a>
+                </p>
+                <p className="text-lg md:text-xl font-bold text-gray-900">
                   <a href="tel:+919872632396" className="hover:text-yellow-600">
                     +91-9872632396
                   </a>

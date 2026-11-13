@@ -26,7 +26,7 @@ export const metadata = {
     "Explore transportation services by Guru Nanak Tours & Travels: Government Vehicle Outsourcing, Official Duty Vehicles, Employee Transport, Healthcare Transport, and Airport Transfers in Punjab.",
 };
 
-const whatsappNumber = "919872632396";
+const whatsappNumber = "919876239897";
 
 const servicesList = [
   {
@@ -405,11 +405,11 @@ export default function ServicesPage() {
               </Link>
 
               <a
-                href="tel:+919872632396"
+                href="tel:+919876239897"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/40 px-7 py-3.5 text-sm sm:text-base font-bold text-white hover:bg-white hover:text-[#00193d] transition"
               >
                 <Phone size={18} />
-                <span>+91-9872632396</span>
+                <span>+91-9876239897</span>
               </a>
             </div>
           </div>

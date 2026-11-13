@@ -5,7 +5,7 @@ import ContactClient from "../Component/ContactClient";
 export const metadata = {
   title: "Contact Us | Guru Nanak Tours & Travels - Taxi & Vehicle Outsourcing Mohali",
   description:
-    "Contact Guru Nanak Tours & Travels for taxi service, vehicle outsourcing, airport transfers, and corporate travel in Punjab. Call +91-9872632396 or visit Phase-9, Mohali.",
+    "Contact Guru Nanak Tours & Travels for taxi service, vehicle outsourcing, airport transfers, and corporate travel in Punjab. Call +91-9876239897 / +91-9872632396 or visit Phase-9, Mohali.",
 };
 
 export default function ContactPage() {

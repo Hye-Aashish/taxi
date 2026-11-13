@@ -111,7 +111,7 @@ export default function ContactClient() {
     }
   };
 
-  const whatsappNumber = "919872632396";
+  const whatsappNumber = "919876239897";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     "Hello Guru Nanak Tours & Travels, I need assistance with travel/vehicle booking."
   )}`;
@@ -130,6 +130,9 @@ export default function ContactClient() {
               <h3 className="text-lg font-bold text-[#00193d] mb-1">Call Us 24/7</h3>
               <p className="text-xs text-gray-500 mb-3">For instant booking & quotes</p>
               <div className="space-y-1 text-sm font-bold text-gray-800">
+                <a href="tel:+919876239897" className="block hover:text-[#ffa41b] transition">
+                  +91-9876239897
+                </a>
                 <a href="tel:+919872632396" className="block hover:text-[#ffa41b] transition">
                   +91-9872632396
                 </a>
@@ -398,7 +401,7 @@ export default function ContactClient() {
                     <FaPhoneAlt className="text-[#ffa41b] mt-1 shrink-0" size={16} />
                     <div>
                       <p className="font-semibold text-white">Direct Dispatch:</p>
-                      <p>+91-9872632396 / +91-8728888181</p>
+                      <p>+91-9876239897 / +91-9872632396 / +91-8728888181</p>
                     </div>
                   </div>
                 </div>
