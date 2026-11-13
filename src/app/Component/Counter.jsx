@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Link from 'next/link'
 
 const Counter = () => {
   return (
@@ -32,9 +33,11 @@ const Counter = () => {
             institutions and corporate organizations across Punjab.
           </p>
 
-          <button className="bg-[#00193d] text-white font-semibold px-6 py-2 transition">
-            Contact Us Today
-          </button>
+          <Link href="/contact" className="inline-block">
+            <button className="bg-[#00193d] hover:bg-[#ffa41b] hover:text-[#00193d] text-white font-semibold px-6 py-2 transition cursor-pointer">
+              Contact Us Today
+            </button>
+          </Link>
 
         </div>
       </div>

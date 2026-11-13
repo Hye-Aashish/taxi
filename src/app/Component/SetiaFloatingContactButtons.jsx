@@ -4,8 +4,8 @@ import React from "react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function SetiaFloatingContactButtons() {
-  const phoneNumber = "+91-9876239897";
-  const whatsappLink = `https://wa.me/9876239897?text=${encodeURIComponent(
+  const phoneNumber = "+919872632396";
+  const whatsappLink = `https://wa.me/919872632396?text=${encodeURIComponent(
     "Hello Rapto Cab, I need travel assistance."
   )}`;
 

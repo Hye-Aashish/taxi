@@ -49,7 +49,7 @@ const services = [
  
 ];
 
-const whatsappNumber = "919876239897";
+const whatsappNumber = "919872632396";
 
 export default function Service() {
   return (
@@ -127,7 +127,7 @@ export default function Service() {
                 <div className="border-t border-gray-100 p-4">
                   <div className="flex gap-3">
                     <Link
-                      href="#book-now"
+                      href="/contact"
                       className="flex flex-1 items-center justify-center rounded-lg bg-[#ffa41b] px-3 py-3 text-sm font-bold text-[#00193d] transition hover:bg-[#00193d] hover:text-white"
                     >
                       Enquire Now
@@ -173,7 +173,7 @@ export default function Service() {
           </p>
 
           <Link
-            href="#book-now"
+            href="/contact"
             className="inline-flex items-center justify-center rounded-lg bg-[#ffa41b] px-7 py-3 font-bold text-[#00193d] transition hover:bg-white"
           >
             Discuss Your Requirements

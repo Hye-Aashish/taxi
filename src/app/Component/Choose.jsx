@@ -156,14 +156,6 @@ export default function Choose() {
                 );
               })}
             </div>
-
-            <a
-              href="#contact"
-              className="mt-8 inline-flex items-center gap-3 rounded-md bg-[#00193d] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#d9a441] hover:text-[#00193d]"
-            >
-              Know More
-              <span aria-hidden="true">→</span>
-            </a>
           </div>
         </div>
 
@@ -276,14 +268,6 @@ export default function Choose() {
                 );
               })}
             </div>
-
-            <a
-              href="#contact"
-              className="mt-8 inline-flex items-center gap-3 rounded-md bg-[#00193d] px-7 py-3.5 font-semibold text-white transition-all duration-300 hover:bg-[#d9a441] hover:text-[#00193d]"
-            >
-              Discuss Your Requirements
-              <span aria-hidden="true">→</span>
-            </a>
           </div>
 
           {/* RIGHT IMAGE */}

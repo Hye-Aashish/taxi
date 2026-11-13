@@ -52,23 +52,25 @@ export default function About() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4 w-full">
 
             {/* Phone Box */}
-            <a
-              href="tel:+917973841893"
-              className="flex items-center gap-3"
-            >
+            <div className="flex items-center gap-3">
               <div className="w-12 h-12 shrink-0 rounded-full bg-yellow-500 flex items-center justify-center">
                 <Phone size={22} className="text-white" />
               </div>
 
               <div>
-                <p className="text-gray-500 text-sm">
-                  Call For Enquiries
+                <p className="text-gray-500 text-sm">Call For Enquiries</p>
+                <p className="text-lg md:text-xl font-bold text-gray-900">
+                  <a href="tel:+919872632396" className="hover:text-yellow-600">
+                    +91-9872632396
+                  </a>
                 </p>
                 <p className="text-lg md:text-xl font-bold text-gray-900">
-                  +91-9876239897
+                  <a href="tel:+918728888181" className="hover:text-yellow-600">
+                    +91-8728888181
+                  </a>
                 </p>
               </div>
-            </a>
+            </div>
 
          
 

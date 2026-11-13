@@ -65,7 +65,7 @@ export default function HeroSection() {
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
 
               <Link
-                href="#book-now"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#ffa41b] px-7 py-4 text-sm font-bold text-[#00193d] shadow-lg transition duration-300 hover:bg-white sm:px-9 sm:text-base"
               >
                 Request a Transport Quote
@@ -73,7 +73,7 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                href="#services"
+                href="/services"
                 className="inline-flex items-center justify-center gap-3 rounded-lg border border-white/50 bg-white/10 px-7 py-4 text-sm font-bold text-white backdrop-blur-sm transition duration-300 hover:bg-white hover:text-[#00193d] sm:px-9 sm:text-base"
               >
                 Explore Our Services

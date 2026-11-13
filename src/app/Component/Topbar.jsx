@@ -15,8 +15,14 @@ const Topbar = () => {
             <span>08:00 - 16:00</span>
           </div>
           <div className="flex items-center gap-2">
-            <FiPhoneCall className="text-white" />
-            <span>+91-9876239897</span>
+            <FiPhoneCall className="text-white shrink-0" />
+            <a href="tel:+919872632396" className="hover:underline">
+              +91-9872632396
+            </a>
+            <span className="text-white/60">|</span>
+            <a href="tel:+918728888181" className="hover:underline">
+              +91-8728888181
+            </a>
           </div>
         </div>
 

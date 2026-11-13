@@ -32,8 +32,8 @@ export default function Contact() {
       email: formData.email,
       phone: formData.phone,
 
-      serviceType: formData.serviceType || "local-shifting",
-      moveType: formData.moveType || "Household",
+      serviceType: formData.serviceType || "Taxi / Transport Service",
+      moveType: formData.moveType || "Official / Personal Travel",
 
       message: formData.message,
       mail_to: "raptocab@gmail.com",
@@ -52,7 +52,7 @@ export default function Contact() {
       const data = await response.json().catch(() => ({}));
 
       if (response.ok) {
-        window.location.href = "/thankyou";
+        window.location.href = "/thankyou/";
       } else {
         alert(data?.message || "Failed to send message");
       }
@@ -133,8 +133,8 @@ export default function Contact() {
                 value={formData.serviceType}
                 onChange={handleChange}
                 type="text"
-                placeholder="Service Type (Packing, Shifting...)"
-                className="w-full pl-12 pr-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
+                placeholder="Service Type (e.g. Govt Outsourcing, Airport Transfer, Corporate Fleet)"
+                className="w-full pl-12 pr-4 py-3 rounded-lg bg-gray-100 focus:ring-2 focus:ring-[#00193d] outline-none"
               />
             </div>
 
